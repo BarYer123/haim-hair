@@ -9,6 +9,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;600&family=Heebo:wght@300;400&display=swap" rel="stylesheet">
 <style>
+.ticker-bar {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 42px;
+  background: #2a6670;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 10000;
+  pointer-events: none;
+}
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker 18s linear infinite;
+  color: #f5f2ec;
+  font-family: 'Heebo', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  gap: 0;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 :root {
   --bg:        #f5f2ec;
   --surface:   #edeae1;
@@ -263,6 +288,13 @@ img { max-width: 100%; display: block; border-radius: 2px; }
 </style>
 </head>
 <body>
+
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track">
+    <span>דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · </span>
+    <span>דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · </span>
+  </div>
+</div>
 
 <nav class="nav" id="nav">
   <div class="container">
