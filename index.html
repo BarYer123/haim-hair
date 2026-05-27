@@ -10,14 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;600&family=Heebo:wght@300;400&display=swap" rel="stylesheet">
 <style>
 .ticker-bar {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: 42px;
+  height: 32px;
   background: #2a6670;
   overflow: hidden;
   display: flex;
   align-items: center;
-  z-index: 10000;
   pointer-events: none;
+  border-bottom: 1px solid rgba(245,242,236,0.15);
 }
 .ticker-track {
   display: flex;
@@ -83,18 +82,18 @@ img { max-width: 100%; display: block; border-radius: 2px; }
 /* Navbar */
 .nav {
   position: fixed; top: 0; right: 0; left: 0; z-index: 50;
-  padding: 18px 0;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
   border-bottom: 1px solid transparent;
+  background: var(--bg);
 }
 .nav.scrolled {
   background: rgba(245,242,236,0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--divider);
-  padding: 12px 0;
 }
-.nav .container { display: flex; align-items: center; justify-content: space-between; }
+.nav-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; max-width: 1180px; margin: 0 auto; transition: padding 0.3s ease; }
+.nav.scrolled .nav-row { padding: 10px 32px; }
 .logo { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
 .logo-name { font-family: 'Spectral', serif; font-weight: 400; font-size: 24px; color: var(--text); }
 .logo-tag { font-family: 'Heebo', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
@@ -274,6 +273,8 @@ img { max-width: 100%; display: block; border-radius: 2px; }
   .section { padding: 80px 0; }
   .container { padding: 0 22px; }
   .nav-cta-text { display: none; }
+  .nav-row { padding: 12px 22px; }
+  .nav.scrolled .nav-row { padding: 8px 22px; }
   .hero h1 { font-size: clamp(34px, 8vw, 56px); }
   .contact-phone { font-size: 36px; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -289,15 +290,14 @@ img { max-width: 100%; display: block; border-radius: 2px; }
 </head>
 <body>
 
-<div class="ticker-bar" aria-hidden="true">
-  <div class="ticker-track">
-    <span>דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · </span>
-    <span>דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · </span>
-  </div>
-</div>
-
 <nav class="nav" id="nav">
-  <div class="container">
+  <div class="ticker-bar" aria-hidden="true">
+    <div class="ticker-track">
+      <span>דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · </span>
+      <span>דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · דמו בלבד — לא לשימוש מסחרי | DEMO ONLY — ALL RIGHTS RESERVED · </span>
+    </div>
+  </div>
+  <div class="nav-row">
     <a href="#" class="logo">
       <span class="logo-name">חיים</span>
       <span class="logo-tag">עיצוב שיער</span>
